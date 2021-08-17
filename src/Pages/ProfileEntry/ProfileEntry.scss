@@ -1,0 +1,41 @@
+@use '../../styles/mixins' as *;
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+
+  &__btn {
+    border: none;
+    background: white;
+    font-size: 1rem;
+    position: relative;
+
+    &::before {
+      background: white;
+      height: 100%;
+      width: 100%;
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      animation: type 1s forwards;
+    }
+  }
+}
+
+@keyframes type {
+  to {
+    left: 100%;
+  }
+}
