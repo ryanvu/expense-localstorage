@@ -6,3 +6,17 @@
   box-sizing: border-box;
   font-family: "Karla";
 }
+
+body {
+  overflow-x: hidden;
+}
+
+button {
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

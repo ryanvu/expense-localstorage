@@ -1,0 +1,183 @@
+@use '../../styles/mixins' as *;
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 1rem;
+  align-items: center;
+
+  @include tablet {
+    margin: 2rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      max-width: 400px;
+    }
+  }
+
+  &__welcome {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__instructions {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  &__radio {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #bbbbbb;
+    border-radius: 10px;
+    height: 4rem;
+
+    &-label {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      gap: 0.5rem;
+      cursor: pointer;
+      width: 100%;
+      margin: 1rem;
+    }
+
+    &-input {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  &__digits {
+    margin-top: 1rem;
+    height: 220px;
+    border: 1px solid #bbbbbb;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.75rem 0;
+
+    &-display {
+      @extend .cards__digits;
+      width: 320px;
+      cursor: pointer;
+      margin: 0;
+      transition: all 0.5s ease;
+      &:hover {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  &__title {
+    color: #bbbbbb;
+    font-size: 2rem;
+    border-radius: 10px;
+
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__chip {
+    height: 40px;
+    width: 50px;
+    border-radius: 10px;
+    border: 1px solid #bbbbbb;
+
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  &__numbers {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 1rem;
+  }
+  &__static {
+    font-family: "Kredit";
+    font-size: 1.5rem;
+    color: #bbbbbb;
+  }
+
+  &__four {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    border: none;
+    border: 1px solid #bbbbbb;
+    font-size: 1rem;
+    padding: 0.25rem;
+    font-family: "Kredit";
+    padding-left: 0.15rem;
+
+    border-radius: 6px;
+
+    &:active {
+      outline: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1rem;
+  }
+
+  &__name {
+    color: #808080;
+    font-family: "Kredit";
+  }
+  &__png {
+    height: 2rem;
+
+    &-big {
+      height: 3rem;
+    }
+  }
+
+  &__company {
+    margin-top: 1rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+  }
+
+  &__next {
+    padding: 0.25rem;
+    margin-top: 1rem;
+  }
+}
+
+//form layouts
+
+.cards__form {
+  display: flex;
+  flex-direction: column;
+
+  &-row {
+    display: flex;
+    gap: 1rem;
+    align-self: stretch;
+    justify-content: space-between;
+  }
+}
+
+.selected {
+  @extend .cards__radio;
+  border: 3px solid #01a04a;
+}

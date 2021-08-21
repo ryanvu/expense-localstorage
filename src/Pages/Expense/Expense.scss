@@ -1,0 +1,64 @@
+@use '../../styles/mixins' as *;
+
+.expense {
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__details {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  &__transactions {
+    flex: 2;
+
+    border-radius: 10px;
+    height: 97vh;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    border-radius: 10px;
+
+    &-title {
+      background: black;
+      padding: 1rem;
+      border-radius: 10px;
+      color: white;
+    }
+  }
+
+  &__add {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    &-top {
+      border: 1px solid #bbbbbb;
+      border-radius: 10px;
+    }
+
+    &-title {
+      padding: 1rem;
+
+      cursor: pointer;
+    }
+
+    &-form {
+      margin: 1rem;
+    }
+  }
+}

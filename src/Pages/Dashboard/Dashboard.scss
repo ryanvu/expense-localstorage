@@ -1,0 +1,48 @@
+@use '../../styles/mixins' as *;
+
+.dashboard {
+  margin: 1rem;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    display: flex;
+    height: 90vh;
+    margin: 1rem;
+
+    @include tablet {
+      width: 700px;
+    }
+  }
+
+  &__nav {
+    list-style-type: none;
+
+    border-radius: 10px;
+    height: 100%;
+    padding: 1rem;
+    background: #bbbbbb;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-items {
+      height: 2rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 1rem;
+
+      &:hover {
+        cursor: pointer;
+        color: gray;
+        background: white;
+      }
+    }
+  }
+}
