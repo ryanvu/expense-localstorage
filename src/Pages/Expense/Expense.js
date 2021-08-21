@@ -3,16 +3,27 @@ import Card from "../../component/Card/Card";
 import "./Expense.scss";
 import { useUserContext } from "../../contexts/UserContext";
 import { useLocation } from "react-router-dom";
+import useForm from "../../hooks/useForm";
 import Input from "../../component/Input/Input";
 
 //assets
 //images
 
 const Expense = () => {
-  const { userInfo, cards } = useUserContext();
+  const { userInfo, cards, myCategories } = useUserContext();
   const [cardInfo, setcardInfo] = useState();
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const { formData, handleInputChange, handleSubmit } = useForm(
+    {
+      item: "",
+      amount: "",
+      category: "",
+    },
+    () => {
+      console.log(formData);
+    }
+  );
   const location = useLocation();
   const digits = location.pathname.split("/")[2];
 
@@ -44,16 +55,51 @@ const Expense = () => {
       )}
       <div className="expense__transactions">
         <div className="expense__list">
-          <h3 className="expense__list-title">transactions</h3>
+          <h3 onClick={handleSubmit} className="expense__list-title">
+            transactions
+          </h3>
         </div>
         <div className="expense__add">
           <div className="expense__add-top">
-            <h3 onClick={toggle} className="expense__add-title">
-              Add expense
-            </h3>
+            <div onClick={toggle} className="expense__add-title">
+              <span>Add expense</span>
+              {showForm ? <span>"-"</span> : <span>"+"</span>}
+            </div>
             {showForm && (
               <form className="expense__add-form">
-                <Input name="Transaction" />
+                <Input
+                  expense
+                  label="Item"
+                  name="item"
+                  value={formData.item}
+                  onChange={handleInputChange}
+                />
+                <Input
+                  expense
+                  label="Amount"
+                  name="amount"
+                  value={formData.amount}
+                  onChange={handleInputChange}
+                />
+                <label>Category</label>
+                <select
+                  name="category"
+                  id="category"
+                  value={formData.category}
+                  onChange={handleInputChange}
+                >
+                  <option value="" disabled>
+                    Select category
+                  </option>
+                  {myCategories.map((cat, i) => {
+                    return (
+                      <option key={i} value={cat}>
+                        {cat[0].toUpperCase() + cat.slice(1, cat.length)}
+                      </option>
+                    );
+                  })}
+                </select>
+                <button>Add</button>
               </form>
             )}
           </div>

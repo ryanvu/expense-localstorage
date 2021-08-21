@@ -17,4 +17,9 @@
     border-bottom: 2px solid black;
     transition: all 0.5s;
   }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

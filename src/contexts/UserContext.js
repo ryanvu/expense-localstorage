@@ -12,6 +12,10 @@ export const UserProvider = ({ children }) => {
     "expense-transactions",
     []
   );
+  const [myCategories, setMyCategories] = useLocalStorage(
+    "expense-user-categories",
+    ["groceries", "restaurants", "pets", "misc"]
+  );
 
   const addCard = (info) => {
     setCards([...cards, info]);
@@ -27,6 +31,7 @@ export const UserProvider = ({ children }) => {
     addCard,
     expenseList,
     addTransaction,
+    myCategories,
   };
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
 };
