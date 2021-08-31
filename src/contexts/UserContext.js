@@ -14,7 +14,13 @@ export const UserProvider = ({ children }) => {
   );
   const [myCategories, setMyCategories] = useLocalStorage(
     "expense-user-categories",
-    ["groceries", "restaurants", "pets", "misc"]
+    [
+      { name: "food", color: "blue" },
+      { name: "groceries", color: "green" },
+      { name: "restaurants", color: "red" },
+      { name: "pets", color: "brown" },
+      { name: "misc", color: "black" },
+    ]
   );
 
   const addCard = (info) => {
@@ -34,7 +40,11 @@ export const UserProvider = ({ children }) => {
   };
   // categories
   const addCategory = (category) => {
-    const newCategory = category.toLowerCase();
+    const categoryName = category.name.toLowerCase();
+    const newCategory = {
+      name: categoryName,
+      color: category.color,
+    };
     setMyCategories([...myCategories, newCategory]);
   };
 

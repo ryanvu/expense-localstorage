@@ -149,6 +149,7 @@
     @include tablet {
       width: 70vh;
       height: 200px;
+      padding-bottom: 1rem;
     }
 
     &-title {
@@ -169,7 +170,13 @@
 
   &__add {
     align-self: flex-end;
+    display: flex;
+    align-items: center;
     margin-right: 1rem;
+
+    @include tablet {
+      margin-top: auto;
+    }
 
     &-input {
       border: 1px solid black;
@@ -193,6 +200,16 @@
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
     }
+
+    &-color {
+      height: 1.75rem;
+      width: 1.75rem;
+
+      border-radius: 5px;
+      margin-right: 0.5rem;
+
+      cursor: pointer;
+    }
   }
 }
 
@@ -205,6 +222,12 @@
   padding: 0.35rem 0.5rem;
   font-size: 0.75rem;
   border-radius: 10px;
+
+  &__color {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 10px;
+  }
 }
 
 .error {

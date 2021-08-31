@@ -158,8 +158,9 @@ const Expense = () => {
                   </option>
                   {myCategories.map((cat, i) => {
                     return (
-                      <option key={i} value={cat}>
-                        {cat[0].toUpperCase() + cat.slice(1, cat.length)}
+                      <option key={i} value={cat.name}>
+                        {cat.name[0].toUpperCase() +
+                          cat.name.slice(1, cat.name.length)}
                       </option>
                     );
                   })}
