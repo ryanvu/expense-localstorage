@@ -1,0 +1,36 @@
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 2rem;
+  border-bottom: 1px solid #bbbbbb;
+  padding-bottom: 0.5rem;
+
+  & > span {
+    flex-basis: 100%;
+    text-align: right;
+
+    &:nth-child(2) {
+      padding-right: 1.5rem;
+    }
+
+    &:nth-child(3) {
+      padding-right: 1.5rem;
+    }
+  }
+
+  & > button {
+    flex-basis: 100%;
+    border: none;
+    background: none;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  &__item {
+    font-weight: bold;
+    text-align: left !important;
+  }
+}

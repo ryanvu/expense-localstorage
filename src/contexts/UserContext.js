@@ -24,6 +24,27 @@ export const UserProvider = ({ children }) => {
   const addTransaction = (transactionInfo) => {
     setExpenseList([...expenseList, transactionInfo]);
   };
+
+  const deleteTransaction = (transactionId) => {
+    const filtered = expenseList.filter((t) => {
+      return t.id !== transactionId;
+    });
+    console.log(filtered);
+    setExpenseList(filtered);
+  };
+  // categories
+  const addCategory = (category) => {
+    const newCategory = category.toLowerCase();
+    setMyCategories([...myCategories, newCategory]);
+  };
+
+  const deleteCategory = (category) => {
+    const filtered = myCategories.filter((c) => {
+      return c !== category;
+    });
+    setMyCategories(filtered);
+  };
+
   const values = {
     userInfo,
     setUserInfo,
@@ -31,7 +52,10 @@ export const UserProvider = ({ children }) => {
     addCard,
     expenseList,
     addTransaction,
+    deleteTransaction,
     myCategories,
+    addCategory,
+    deleteCategory,
   };
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
 };

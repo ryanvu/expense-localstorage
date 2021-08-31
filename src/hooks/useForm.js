@@ -14,6 +14,7 @@ const useForm = (initialState, submitCallback) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData(initialState);
     submitCallback?.(formData);
   };
   return { formData, handleInputChange, handleSubmit, handleRadioChange };

@@ -26,7 +26,7 @@ const MyCards = () => {
     <div className="mycards">
       <h3 className="mycards__title">your cards</h3>
       <motion.div variants={staggerVariant} className="mycards__container">
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence>
           {cards.map((card) => {
             return (
               <Card

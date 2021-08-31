@@ -31,6 +31,33 @@
     flex-direction: column;
     flex: 2;
     border-radius: 10px;
+    &-headers {
+      display: flex;
+      justify-content: space-between;
+
+      & > span {
+        margin: 1rem;
+        margin-left: 0;
+
+        font-family: "Kredit";
+        border-right: 1px solid black;
+
+        flex-basis: 100%;
+
+        &:nth-child(1) {
+          border-left: none;
+          padding-right: 1rem;
+        }
+
+        &:nth-child(3) {
+          border-right: 1px solid black;
+          padding-right: 1rem;
+        }
+        &:last-child {
+          visibility: hidden;
+        }
+      }
+    }
 
     &-title {
       background: black;
@@ -66,4 +93,126 @@
       gap: 1rem;
     }
   }
+
+  &__total {
+    font-family: "Kredit";
+    background: black;
+    border-radius: 10px;
+    margin-top: 1rem;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+  }
+}
+
+.category__btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  align-self: flex-end;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #bbbbbb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: "Karla";
+  &-svg {
+    height: 0.75rem;
+    cursor: pointer;
+  }
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+
+  &__modal {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    height: 150px;
+    width: 100%;
+    margin: 1rem;
+    border-radius: 10px;
+    z-index: 200;
+    opacity: 1;
+
+    @include tablet {
+      width: 70vh;
+      height: 200px;
+    }
+
+    &-title {
+      padding: 0.5rem;
+      padding-left: 1.25rem;
+      color: white;
+      background: green;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem;
+  }
+
+  &__add {
+    align-self: flex-end;
+    margin-right: 1rem;
+
+    &-input {
+      border: 1px solid black;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      padding: 0.25rem;
+
+      &:active {
+        outline: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-btn {
+      border: none;
+      padding: 0.25rem;
+      border: 1px solid black;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: white;
+  background: #bbbbbb;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 10px;
+}
+
+.error {
+  background: #d65252;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  align-self: flex-start;
 }

@@ -27,7 +27,6 @@ const Card = ({ digits, name, type }) => {
       variants={cardVariant}
       initial="hidden"
       animate="show"
-      exit={{ scale: 1.5, transition: { duration: 0.5 } }}
       className="cards__digits-display"
     >
       <div className="cards__title">card</div>
