@@ -11,8 +11,8 @@ A simple app to track your expenses and all data is saved on your local storage.
 ## Instructions
 
 1. clone repo
-2. run ### `npm i`
-3. then run ### `npm start`
+2. run `npm i`
+3. then run `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
